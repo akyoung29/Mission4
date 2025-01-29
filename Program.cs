@@ -45,8 +45,10 @@ do
         } while (validCheck == false);
         
         gameBoard[int.Parse(oneGuess)] =  "X";
+        //increment turncounter 
+        turnCount++;
 
-        tt.PrintBoard(gameBoard);
+    tt.PrintBoard(gameBoard);
         winner = tt.ReturnWinner(gameBoard);
 
         if (winner == false)
