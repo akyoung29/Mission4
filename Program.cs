@@ -48,10 +48,15 @@ do
         //increment turncounter 
         turnCount++;
 
-    tt.PrintBoard(gameBoard);
+        tt.PrintBoard(gameBoard);
         winner = tt.ReturnWinner(gameBoard);
+        if (turnCount >= 9 & winner == false)
+        {
+            winner = true; //not actually a winner it is a cat game
+            Console.WriteLine("GAME OVER! NO PLAYER WON THE GAME");
+        }
 
-        if (winner == false)
+    if (winner == false)
         {
             //PLAYER 2
             validCheck = false;
