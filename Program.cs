@@ -13,6 +13,8 @@ string twoGuess = "";
 bool winner = false;
 int turnCount = 0;
 
+bool validCheck = false;
+
 // Welcome the user to the game
 Console.WriteLine("Welcome to group 3-1's TicTacToe Game! Good luck!");
 Console.WriteLine();
@@ -31,26 +33,43 @@ do
 {
         //PLAYER 1
         // Ask each player in turn for their choice 
-        Console.WriteLine("Player one please choose where you would like to play (0-8): ");
-        oneGuess = Console.ReadLine();
-        //validate guess
-        tt.ValidateGuess(oneGuess, gameBoard);
-        //update board array
+        validCheck = false;
+        do
+        {
+            Console.WriteLine("Player one please choose where you would like to play (0-8): ");
+            oneGuess = Console.ReadLine();
+            //validate guess
+            validCheck = tt.ValidateGuess(oneGuess, gameBoard);
+            //update board array
+
+        } while (validCheck ==true);
+        
         gameBoard[int.Parse(oneGuess)] =  "X";
 
         tt.PrintBoard(gameBoard);
+        winner = tt.ReturnWinner(gameBoard);
 
-        //PLAYER 2
-        // Ask each player in turn for their choice 
-        Console.WriteLine("Player two please choose where you would like to play (0-8): ");
-        twoGuess = Console.ReadLine();
-        //validate guess
-        tt.ValidateGuess(twoGuess, gameBoard);
-        //update board array
-        gameBoard[int.Parse(twoGuess)] = "O";
+        if (winner == false)
+        {
+            //PLAYER 2
+            validCheck = false;
+            do
+            {
+                // Ask each player in turn for their choice 
+                Console.WriteLine("Player two please choose where you would like to play (0-8): ");
+                twoGuess = Console.ReadLine();
+                //validate guess
+                validCheck = tt.ValidateGuess(twoGuess, gameBoard);
 
-    //increment turncounter 
-    turnCount++;
+            } while (validCheck == true);
+        
+            //update board array
+            gameBoard[int.Parse(twoGuess)] = "O";
+        }
+        
+
+        //increment turncounter 
+        turnCount++;
 
         tt.PrintBoard(gameBoard);
         winner = tt.ReturnWinner(gameBoard);
