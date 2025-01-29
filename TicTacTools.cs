@@ -19,7 +19,7 @@ namespace Mission4
             // Check that they are guessing a valid position
             if (!isNumber || number < 0 || number > 8)
             {
-                Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
+                Console.WriteLine("Invalid input. Please enter a number between 0 and .");
                 result = false;
             }
 

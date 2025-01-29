@@ -42,7 +42,7 @@ do
             validCheck = tt.ValidateGuess(oneGuess, gameBoard);
             //update board array
 
-        } while (validCheck ==true);
+        } while (validCheck == false);
         
         gameBoard[int.Parse(oneGuess)] =  "X";
 
@@ -61,7 +61,7 @@ do
                 //validate guess
                 validCheck = tt.ValidateGuess(twoGuess, gameBoard);
 
-            } while (validCheck == true);
+            } while (validCheck == false);
         
             //update board array
             gameBoard[int.Parse(twoGuess)] = "O";
