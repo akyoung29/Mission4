@@ -75,12 +75,11 @@ namespace Mission4
                         Console.WriteLine("O wins!");
                         return true;
                     }
-                    else
-                    {
-                        return false;
-                    }
                 }       
             }
+
+            // No winner
+            return false;
         }
     }
 }
