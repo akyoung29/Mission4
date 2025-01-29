@@ -16,13 +16,13 @@ namespace Mission4
             bool isNumber = int.TryParse(guess, out number);
 
             // Check that they are guessing a valid position
-            if (!isNumber || number < 1 || number > 9)
+            if (!isNumber || number < 0 || number > 8)
             {
                 return "Invalid input. Please enter a number between 1 and 9.";
             }
 
             // Check if the spot is already taken
-            if (board[number - 1] == "X" || board[number - 1] == "O")
+            if (board[number] == "X" || board[number] == "O")
             {
                 return "Sorry, that spot has already been taken.";
             }
