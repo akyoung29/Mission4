@@ -34,7 +34,7 @@ do
         Console.WriteLine("Player one please choose where you would like to play (1-9): ");
         oneGuess = Console.ReadLine();
         //validate guess
-        tt.ValidateGuess(oneGuess);
+        tt.ValidateGuess(oneGuess, gameBoard);
         //update board array
         gameBoard.Insert(int.Parse(oneGuess), "X");
 
@@ -45,7 +45,7 @@ do
         Console.WriteLine("Player two please choose where you would like to play (1-9): ");
         twoGuess = Console.ReadLine();
         //validate guess
-        tt.ValidateGuess(twoGuess);
+        tt.ValidateGuess(twoGuess, gameBoard);
         //update board array
         gameBoard.Insert(int.Parse(twoGuess), "O");
 
