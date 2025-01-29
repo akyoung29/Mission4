@@ -10,24 +10,27 @@ namespace Mission4
     internal class TicTacTools
     {
         // ValidateGuess Method
-        public string ValidateGuess(string guess, List<string> board)
+        public bool ValidateGuess(string guess, List<string> board)
         {
+            bool result = true;
             int number;
             bool isNumber = int.TryParse(guess, out number);
 
             // Check that they are guessing a valid position
             if (!isNumber || number < 0 || number > 8)
             {
-                return "Invalid input. Please enter a number between 1 and 9.";
+                Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
+                result = false;
             }
 
             // Check if the spot is already taken
             if (board[number] == "X" || board[number] == "O")
             {
-                return "Sorry, that spot has already been taken.";
+                Console.WriteLine("Sorry, that spot has already been taken.");
+                result = false;
             }
 
-            return "Valid guess.";
+            return result;
         }
 
 
