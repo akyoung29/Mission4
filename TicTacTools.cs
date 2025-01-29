@@ -19,12 +19,12 @@ namespace Mission4
             // Check that they are guessing a valid position
             if (!isNumber || number < 0 || number > 8)
             {
-                Console.WriteLine("Invalid input. Please enter a number between 0 and .");
+                Console.WriteLine("Invalid input. Please enter a number between 0 and 8.");
                 result = false;
             }
 
             // Check if the spot is already taken
-            if (board[number] == "X" || board[number] == "O")
+            else if (board[number] == "X" || board[number] == "O")
             {
                 Console.WriteLine("Sorry, that spot has already been taken.");
                 result = false;
