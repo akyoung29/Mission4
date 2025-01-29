@@ -31,26 +31,26 @@ do
 {
         //PLAYER 1
         // Ask each player in turn for their choice 
-        Console.WriteLine("Player one please choose where you would like to play (1-9): ");
+        Console.WriteLine("Player one please choose where you would like to play (0-8): ");
         oneGuess = Console.ReadLine();
         //validate guess
         tt.ValidateGuess(oneGuess, gameBoard);
         //update board array
-        gameBoard.Insert(int.Parse(oneGuess), "X");
+        gameBoard[int.Parse(oneGuess)] =  "X";
 
         tt.PrintBoard(gameBoard);
 
         //PLAYER 2
         // Ask each player in turn for their choice 
-        Console.WriteLine("Player two please choose where you would like to play (1-9): ");
+        Console.WriteLine("Player two please choose where you would like to play (0-8): ");
         twoGuess = Console.ReadLine();
         //validate guess
         tt.ValidateGuess(twoGuess, gameBoard);
         //update board array
-        gameBoard.Insert(int.Parse(twoGuess), "O");
+        gameBoard[int.Parse(twoGuess)] = "O";
 
-        //increment turncounter 
-        turnCount++;
+    //increment turncounter 
+    turnCount++;
 
         tt.PrintBoard(gameBoard);
         winner = tt.ReturnWinner(gameBoard);
