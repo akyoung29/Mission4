@@ -10,7 +10,7 @@ namespace Mission4
     internal class TicTacTools
     {
         // ValidateGuess Method
-        public string ValidateGuess(string guess, string[] board)
+        public string ValidateGuess(string guess, List<string> board)
         {
             int number;
             bool isNumber = int.TryParse(guess, out number);
@@ -32,7 +32,7 @@ namespace Mission4
 
 
         // PrintBoard Method
-        public void PrintBoard(string[] board)
+        public void PrintBoard(List<string> board)
         {
             // Print the board based on the array that is passed.
             Console.WriteLine($"{board[0]} | {board[1]} | {board[2]} ");
@@ -45,7 +45,7 @@ namespace Mission4
 
         // ReturnWinner Method
 
-        public bool ReturnWinner(string[] board)
+        public bool ReturnWinner(List<string> board)
         {
             // Define the winning combinations
             int[][] winningCombinations = new int[][]
