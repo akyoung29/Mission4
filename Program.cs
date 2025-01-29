@@ -5,7 +5,7 @@ using Mission4;
 
 TicTacTools tt = new TicTacTools();
 //game board array to store player's choices
-List<string> gameBoard = new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; 
+List<string> gameBoard = new List<string>() { "0", "1", "2", "3", "4", "5", "6", "7", "8" }; 
 
 string oneGuess = "";
 string twoGuess = "";
