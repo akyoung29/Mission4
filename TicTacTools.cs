@@ -45,7 +45,7 @@ namespace Mission4
 
         // ReturnWinner Method
 
-        public (bool, string) ReturnWinner(string[] board)
+        public bool ReturnWinner(string[] board)
         {
             // Define the winning combinations
             int[][] winningCombinations = new int[][]
@@ -67,17 +67,20 @@ namespace Mission4
                 {
                     if (board[combination[0]] == "X")
                     {
-                        return (true, "X wins!");
+                        Console.WriteLine("X wins!");
+                        return true;
                     }
                     else if (board[combination[0]] == "O")
                     {
-                        return (true, "O wins!");
+                        Console.WriteLine("O wins!");
+                        return true;
                     }
-                }
+                    else
+                    {
+                        return false;
+                    }
+                }       
             }
-
-            // No winner or draw
-            return (false, "No winner yet.");
         }
     }
 }
