@@ -31,7 +31,7 @@ do
 {
         //PLAYER 1
         // Ask each player in turn for their choice 
-        Console.WriteLine($"{playerOne} please choose where you would like to play (1-9): ");
+        Console.WriteLine("Player one please choose where you would like to play (1-9): ");
         oneGuess = Console.ReadLine();
         //validate guess
         tt.ValidateGuess(oneGuess);
@@ -42,7 +42,7 @@ do
 
         //PLAYER 2
         // Ask each player in turn for their choice 
-        Console.WriteLine($"{playerTwo} please choose where you would like to play (1-9): ");
+        Console.WriteLine("Player two please choose where you would like to play (1-9): ");
         twoGuess = Console.ReadLine();
         //validate guess
         tt.ValidateGuess(twoGuess);
